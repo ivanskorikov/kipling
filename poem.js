@@ -105,27 +105,31 @@ function formatTranslationHtml(text, footnotes) {
   }
 
   const used = new Set();
-  // Mark superscripts first (Complete Verse OCR often keeps these).
-  let marked = text.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (run) => {
+  // Placeholder must not contain digit runs after a non-digit (e.g. "FN:819"),
+  // or a later ASCII pass / browser null-stripping can leak "FN:" into the text.
+  const mark = (id) => `\u0000${id}\u0000`;
+
+  // Glued ASCII OCR markers first (usually 3–4 digits; 1–2 only if listed in appendix).
+  let marked = text.replace(/([^\s\d])(\d{1,4})(?!\d)/g, (full, before, id, offset) => {
+    if (id.length < 3 && !byId.has(id)) return full;
+    const start = offset + before.length;
+    const end = start + id.length;
+    if (!isAsciiFootnoteMarker(text, start, end, id)) return full;
+    used.add(id);
+    return `${before}${mark(id)}`;
+  });
+  // Unicode superscripts (Complete Verse OCR often keeps these).
+  marked = marked.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (run) => {
     const id = superRunToId(run);
     if (!id || !/^\d{1,4}$/.test(id)) return run;
     const n = Number(id);
     if (!(1 <= n && n <= 2500)) return run;
     used.add(id);
-    return `\u0000FN:${id}\u0000`;
-  });
-  // Then glued ASCII OCR markers (usually 3–4 digits; 1–2 only if listed in appendix).
-  marked = marked.replace(/([^\s\d\u0000])(\d{1,4})(?!\d)/g, (full, before, id, offset) => {
-    if (id.length < 3 && !byId.has(id)) return full;
-    const start = offset + before.length;
-    const end = start + id.length;
-    if (!isAsciiFootnoteMarker(marked, start, end, id)) return full;
-    used.add(id);
-    return `${before}\u0000FN:${id}\u0000`;
+    return mark(id);
   });
 
   let html = escapeHtml(marked);
-  html = html.replace(/\u0000FN:(\d{1,4})\u0000/g, (_, id) => {
+  html = html.replace(/\u0000(\d{1,4})\u0000/g, (_, id) => {
     const tip = byId.has(id) ? ` title="${escapeHtml(byId.get(id))}"` : "";
     return `<sup class="fn-ref"${tip}><a href="#fn-${id}">${id}</a></sup>`;
   });
