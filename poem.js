@@ -55,17 +55,33 @@ function splitFootnotes(text) {
   return { body, footnotes };
 }
 
+const SUPER_DIGITS = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+const SUPER_TO_ASCII = Object.fromEntries(
+  [...SUPER_DIGITS].map((ch, i) => [ch, String(i)])
+);
+
+function superRunToId(run) {
+  let id = "";
+  for (const ch of run) {
+    const d = SUPER_TO_ASCII[ch];
+    if (d === undefined) return null;
+    id += d;
+  }
+  return id;
+}
+
 /**
- * Turn glued OCR footnote markers (Майванд1274, …)1275) into superscripts,
- * and render the note list under the verse.
+ * Turn footnote markers into linked superscripts and render the note list.
+ * Supports Unicode superscripts (⁸¹⁹) and glued OCR digits (Майванд1274).
  */
 function formatTranslationHtml(text, footnotes) {
   const byId = new Map(footnotes.map((f) => [f.id, f.text]));
 
-  function isFootnoteMarker(text, start, end, id) {
-    // Skip plain years
+  function isAsciiFootnoteMarker(text, start, end, id) {
     const n = Number(id);
-    if (n >= 1800 && n <= 2099) return false;
+    if (!(1 <= n && n <= 2500)) return false;
+    // Known appendix ids are footnotes even when they look like years (1800–2099).
+    if (!byId.has(id) && n >= 1800 && n <= 2099) return false;
     // Biblical chapter:verse — digit:digit (27:8), not footnote then colon (народ1276:)
     if (start > 0 && text[start - 1] === ":" && start >= 2 && /\d/.test(text[start - 2])) {
       return false;
@@ -88,28 +104,35 @@ function formatTranslationHtml(text, footnotes) {
     return true;
   }
 
-  const marked = text.replace(/([^\s\d])(\d{3,4})(?!\d)/g, (full, before, id, offset) => {
+  const used = new Set();
+  // Mark superscripts first (Complete Verse OCR often keeps these).
+  let marked = text.replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, (run) => {
+    const id = superRunToId(run);
+    if (!id || !/^\d{1,4}$/.test(id)) return run;
+    const n = Number(id);
+    if (!(1 <= n && n <= 2500)) return run;
+    used.add(id);
+    return `\u0000FN:${id}\u0000`;
+  });
+  // Then glued ASCII OCR markers (usually 3–4 digits; 1–2 only if listed in appendix).
+  marked = marked.replace(/([^\s\d\u0000])(\d{1,4})(?!\d)/g, (full, before, id, offset) => {
+    if (id.length < 3 && !byId.has(id)) return full;
     const start = offset + before.length;
     const end = start + id.length;
-    if (!isFootnoteMarker(text, start, end, id)) return full;
+    if (!isAsciiFootnoteMarker(marked, start, end, id)) return full;
+    used.add(id);
     return `${before}\u0000FN:${id}\u0000`;
   });
+
   let html = escapeHtml(marked);
-  html = html.replace(/\u0000FN:(\d{3,4})\u0000/g, (_, id) => {
+  html = html.replace(/\u0000FN:(\d{1,4})\u0000/g, (_, id) => {
     const tip = byId.has(id) ? ` title="${escapeHtml(byId.get(id))}"` : "";
     return `<sup class="fn-ref"${tip}><a href="#fn-${id}">${id}</a></sup>`;
   });
 
-  const used = new Set();
-  for (const m of text.matchAll(/([^\s\d])(\d{3,4})(?!\d)/g)) {
-    const before = m[1];
-    const id = m[2];
-    const start = m.index + before.length;
-    const end = start + id.length;
-    if (isFootnoteMarker(text, start, end, id)) used.add(id);
-  }
-
-  const notes = footnotes.filter((f) => used.has(f.id));
+  // Show every appendix note (title-level notes may have no body marker),
+  // plus any body markers still missing from the appendix.
+  const notes = footnotes.map((f) => ({ ...f }));
   for (const id of used) {
     if (!notes.some((n) => n.id === id)) notes.push({ id, text: "" });
   }
