@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Footnotes — Rudyard Kipling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="footnotes.css?v=2" />
+  </head>
+  <body>
+    <div class="paper" aria-hidden="true"></div>
+
+    <nav class="poem-nav">
+      <a href="index.html">← Poems</a>
+    </nav>
+
+    <main class="fn-page" id="fn-page">
+      <header class="fn-page__header">
+        <h1 class="fn-page__title">Footnotes</h1>
+        <p class="fn-page__meta" id="fn-count">Loading…</p>
+      </header>
+
+      <label class="fn-page__search">
+        <span class="visually-hidden">Search footnotes</span>
+        <input
+          type="search"
+          id="fn-search"
+          placeholder="Search by number or text…"
+          autocomplete="off"
+        />
+      </label>
+
+      <ol class="fn-list" id="fn-list"></ol>
+    </main>
+
+    <script src="footnotes.js?v=2" type="module"></script>
+  </body>
+</html>

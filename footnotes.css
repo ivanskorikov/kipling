@@ -1,0 +1,119 @@
+.poem-nav {
+  width: min(100% - 2rem, 90rem);
+  margin: 0 auto;
+  padding: 1.25rem 0 0;
+}
+
+.poem-nav a {
+  font-style: italic;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.poem-nav a:hover {
+  color: var(--accent);
+}
+
+.fn-page {
+  width: min(100% - 2rem, 48rem);
+  margin: 1rem auto 4rem;
+}
+
+.fn-page__header {
+  margin: 0 0 1.5rem;
+  padding: 0 0 1.1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 35%, transparent);
+  text-align: center;
+}
+
+.fn-page__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: calc(clamp(1.8rem, 1.2rem + 2vw, 2.6rem) - 2pt);
+  font-weight: 400;
+}
+
+.fn-page__meta {
+  margin: 0.5rem 0 0;
+  color: var(--ink-faint);
+  font-variant-numeric: oldstyle-nums;
+}
+
+.fn-page__search {
+  display: block;
+  margin: 0 0 1.5rem;
+}
+
+.fn-page__search input {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 55%, white);
+  border: 1px solid color-mix(in srgb, var(--rule) 45%, transparent);
+  padding: 0.45rem 0.75rem;
+}
+
+.fn-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.fn-list__item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.75rem;
+  scroll-margin-top: 1.5rem;
+  padding: 0.35rem 0.25rem;
+  border-radius: 2px;
+}
+
+.fn-list__item:target {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.fn-list__num {
+  font-variant-numeric: oldstyle-nums;
+  color: var(--ink-faint);
+  text-align: right;
+  font-weight: 700;
+}
+
+.fn-list__num a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fn-list__num a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.fn-list__text {
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.fn-list__item.is-hidden {
+  display: none;
+}
+
+.fn-xref {
+  color: var(--accent);
+  text-decoration: none;
+  font-variant-numeric: oldstyle-nums;
+}
+
+.fn-xref:hover {
+  text-decoration: underline;
+}
+
+.fn-page__empty {
+  font-style: italic;
+  color: var(--ink-faint);
+  text-align: center;
+  padding: 2rem 0;
+}

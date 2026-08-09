@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rudyard Kipling — Poems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=13" />
+  </head>
+  <body>
+    <div class="paper" aria-hidden="true"></div>
+
+    <header class="hero">
+      <div class="hero__inner">
+        <figure class="portrait">
+          <div class="portrait__frame">
+            <img
+              src="assets/portrait.png"
+              alt="Portrait of Rudyard Kipling"
+              width="709"
+              height="1036"
+            />
+          </div>
+        </figure>
+
+        <div class="hero__copy">
+          <h1 class="brand">
+            <img
+              class="brand__title"
+              src="assets/title.png"
+              alt="Rudyard Kipling. Born at Bombay, December 30th, 1865. And what should they know of England who only England know?"
+              width="997"
+              height="155"
+            />
+          </h1>
+
+          <img
+            class="signature"
+            src="assets/signature.svg"
+            alt="Rudyard Kipling’s signature"
+            width="705"
+            height="158"
+          />
+
+          <p class="hero__lede">
+            An archive of the poems in English, with Russian translations where they exist.
+          </p>
+
+          <a class="hero__cta" href="#poems">Browse the poems</a>
+          <a class="hero__cta hero__cta--secondary" href="poem.html" id="random-poem">Random poem</a>
+          <a class="hero__cta hero__cta--secondary" href="translators.html">Translators</a>
+          <a class="hero__cta hero__cta--secondary" href="footnotes.html">Footnotes</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="poems" class="index">
+      <div class="index__head">
+        <h2 class="index__title">Poems</h2>
+        <p class="index__count" id="poem-count"></p>
+      </div>
+
+      <div class="toolbar" role="toolbar" aria-label="Sort and filter poems">
+        <label class="toolbar__search">
+          <span class="visually-hidden">Search</span>
+          <input
+            type="search"
+            id="search"
+            placeholder="Search by title or translator…"
+            autocomplete="off"
+          />
+        </label>
+
+        <label class="toolbar__translator">
+          <span class="visually-hidden">Filter by translator</span>
+          <select id="translator-filter" aria-label="Filter by translator">
+            <option value="">All translators</option>
+          </select>
+        </label>
+
+        <div class="toolbar__sorts">
+          <button type="button" class="sort is-active" data-sort-key="title" aria-pressed="true">
+            A–Z <span class="sort__dir" aria-hidden="true">↑</span>
+          </button>
+          <button type="button" class="sort" data-sort-key="year" aria-pressed="false">
+            Year <span class="sort__dir" aria-hidden="true">↑</span>
+          </button>
+        </div>
+
+        <label class="toolbar__filter">
+          <input type="checkbox" id="with-translation" />
+          <span>With translation</span>
+        </label>
+      </div>
+
+      <ol class="poem-list" id="poem-list"></ol>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Texts arranged for reading. Translations credited to their translators.
+        <a href="translators.html">Translators</a>.
+      </p>
+      <p class="site-footer__license">
+        <a href="LICENSE">CC0</a>
+      </p>
+    </footer>
+
+    <script src="app.js?v=11" type="module"></script>
+  </body>
+</html>

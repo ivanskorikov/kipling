@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Poem — Rudyard Kipling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=12" />
+    <link rel="stylesheet" href="poem.css?v=22" />
+    <link rel="stylesheet" href="typography.css?v=1" />
+  </head>
+  <body>
+    <div class="paper" aria-hidden="true"></div>
+
+    <nav class="poem-nav">
+      <a href="index.html#poems">← Poems</a>
+      <a href="poem.html" id="random-poem">Random poem</a>
+      <a href="poem.html" id="next-poem" hidden>Next poem →</a>
+    </nav>
+
+    <main class="poem-page" id="poem-page">
+      <p class="poem-page__loading">Loading…</p>
+    </main>
+
+    <script src="poem.js?v=23" type="module"></script>
+  </body>
+</html>

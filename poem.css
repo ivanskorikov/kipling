@@ -1,0 +1,238 @@
+.poem-nav {
+  width: min(100% - 2rem, 90rem);
+  margin: 0 auto;
+  padding: 1.25rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: baseline;
+}
+
+.poem-nav a {
+  font-style: italic;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+
+.poem-nav a:hover {
+  color: var(--accent);
+}
+
+.poem-nav #next-poem {
+  margin-left: auto;
+}
+
+.poem-nav #next-poem[hidden] {
+  display: none;
+}
+
+.poem-page {
+  width: min(100% - 2rem, 90rem);
+  margin: 1rem auto 4rem;
+}
+
+.poem-page__loading,
+.poem-page__error {
+  font-style: italic;
+  color: var(--ink-faint);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.poem-page__header {
+  margin: 0 0 1.5rem;
+  padding: 0 0 1.1rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 35%, transparent);
+  text-align: center;
+}
+
+/* Same 2-col grid as .poem-columns so the title sits over English only. */
+@media (min-width: 800px) {
+  .poem-page__header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(2.75rem, 6vw, 4.5rem);
+  }
+
+  .poem-page__header-inner {
+    grid-column: 1;
+    justify-self: stretch;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+.poem-page__title {
+  margin: 0;
+  /*
+   * Title font experiment (Sorts Mill Goudy Italic).
+   * ROLLBACK: font-family: var(--font-display); and delete font-style.
+   */
+  font-family: var(--font-poem-title);
+  font-style: italic;
+  font-size: calc(clamp(1.8rem, 1.2rem + 2vw, 2.6rem) - 2pt);
+  font-weight: 400;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.poem-page__meta {
+  margin: 0.5rem 0 0;
+  color: var(--ink-faint);
+  font-variant-numeric: oldstyle-nums;
+}
+
+.poem-page__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0.75rem;
+  min-height: 2.4rem;
+  width: 100%;
+}
+
+.poem-page__controls--spacer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.poem-page__controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ink-soft);
+  max-width: 100%;
+}
+
+.poem-page__controls select {
+  font: inherit;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--paper) 55%, white);
+  border: 1px solid color-mix(in srgb, var(--rule) 45%, transparent);
+  padding: 0.25rem 0.5rem;
+  width: max-content;
+  max-width: 100%;
+  min-width: min(100%, 18rem);
+}
+
+.poem-columns {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 800px) {
+  .poem-columns {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(2.75rem, 6vw, 4.5rem);
+    align-items: start;
+  }
+}
+
+.poem-col {
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-inline: clamp(0.5rem, 2vw, 1.25rem);
+}
+
+.poem-col__label {
+  margin: 0 0 0.75rem;
+  font-size: 0.85em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: center;
+  width: 100%;
+}
+
+.poem-col__text {
+  margin: 0;
+  font-family: var(--poem-font);
+  font-size: var(--poem-font-size);
+  font-weight: var(--poem-font-weight);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.poem-col--empty .poem-col__text {
+  color: var(--ink-faint);
+  font-style: italic;
+  white-space: normal;
+}
+
+.fn-ref {
+  font-family: var(--font-body, inherit);
+  font-size: 0.65em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.fn-ref a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.fn-ref a:hover {
+  text-decoration: underline;
+}
+
+.poem-footnotes {
+  width: 100%;
+  max-width: 36rem;
+  margin: 1.75rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--rule) 35%, transparent);
+  color: var(--ink-soft);
+  font-size: 0.88em;
+  line-height: 1.45;
+}
+
+.poem-footnotes ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  text-align: left;
+}
+
+.poem-footnotes li {
+  scroll-margin-top: 1.25rem;
+}
+
+.poem-footnotes__num {
+  font-variant-numeric: oldstyle-nums;
+  color: var(--ink-faint);
+  margin-right: 0.35rem;
+}
+
+.poem-footnotes__all {
+  margin: 1rem 0 0;
+  font-size: 0.95em;
+}
+
+.poem-footnotes__all a,
+.fn-xref {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.poem-footnotes__all a:hover,
+.fn-xref:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 799px) {
+  .poem-page__controls--spacer {
+    display: none;
+  }
+}
