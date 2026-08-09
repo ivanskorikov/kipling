@@ -209,6 +209,81 @@ function optionLabel(tr) {
   return `${tr.title} — ${tr.translator}`;
 }
 
+function translationPaneHtml(tr) {
+  const { html, aside } = formatTranslationHtml(tr.text, tr.footnotes || []);
+  return `<pre class="poem-col__text">${html}</pre>${aside}`;
+}
+
+function buildMobilePanes(enText, translations) {
+  const panes = [
+    {
+      key: "en",
+      label: "English",
+      sub: "Original",
+      body: `<pre class="poem-col__text">${escapeHtml(enText)}</pre>`,
+      empty: false,
+    },
+  ];
+  if (!translations.length) {
+    panes.push({
+      key: "empty",
+      label: "Russian",
+      sub: "No translation yet",
+      body: `<pre class="poem-col__text">No translation in the archive yet.</pre>`,
+      empty: true,
+    });
+    return panes;
+  }
+  for (const tr of translations) {
+    panes.push({
+      key: tr.file,
+      label: tr.title,
+      sub: tr.translator,
+      body: translationPaneHtml(tr),
+      empty: false,
+    });
+  }
+  return panes;
+}
+
+function setupMobileDeck() {
+  const track = page.querySelector(".poem-deck__track");
+  const dots = [...page.querySelectorAll(".poem-deck__dot")];
+  if (!track || !dots.length) return;
+
+  const panes = [...track.querySelectorAll(".poem-pane")];
+
+  function activeIndex() {
+    const x = track.scrollLeft;
+    const w = track.clientWidth || 1;
+    return Math.max(0, Math.min(panes.length - 1, Math.round(x / w)));
+  }
+
+  function setActiveDot(i) {
+    dots.forEach((dot, di) => {
+      const on = di === i;
+      dot.classList.toggle("is-active", on);
+      dot.setAttribute("aria-selected", on ? "true" : "false");
+    });
+  }
+
+  track.addEventListener(
+    "scroll",
+    () => {
+      setActiveDot(activeIndex());
+    },
+    { passive: true }
+  );
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      panes[i]?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    });
+  });
+
+  setActiveDot(0);
+}
+
 function render(poem, enText, translations, activeIndex) {
   const t = translations[activeIndex];
   const options = translations
@@ -223,6 +298,30 @@ function render(poem, enText, translations, activeIndex) {
   const year = poem.year && poem.year > 0 ? poem.year : "year unknown";
   document.title = `${poem.title} — Rudyard Kipling`;
 
+  const mobilePanes = buildMobilePanes(enText, translations);
+  const deckPanes = mobilePanes
+    .map(
+      (pane, i) => `
+        <section class="poem-pane${pane.empty ? " poem-pane--empty" : ""}" data-pane="${i}" aria-label="${escapeHtml(
+          pane.sub ? `${pane.label} — ${pane.sub}` : pane.label
+        )}">
+          <h2 class="poem-col__label">${escapeHtml(pane.label)}</h2>
+          ${pane.sub ? `<p class="poem-pane__sub">${escapeHtml(pane.sub)}</p>` : ""}
+          ${pane.body}
+        </section>`
+    )
+    .join("");
+  const deckDots = mobilePanes
+    .map(
+      (_, i) =>
+        `<button type="button" class="poem-deck__dot${
+          i === 0 ? " is-active" : ""
+        }" aria-label="Show panel ${i + 1} of ${mobilePanes.length}" aria-selected="${
+          i === 0 ? "true" : "false"
+        }"></button>`
+    )
+    .join("");
+
   page.innerHTML = `
     <header class="poem-page__header">
       <div class="poem-page__header-inner">
@@ -230,6 +329,23 @@ function render(poem, enText, translations, activeIndex) {
         <p class="poem-page__meta">${escapeHtml(poem.author)} · ${year}</p>
       </div>
     </header>
+
+    <div class="poem-deck" aria-roledescription="carousel" aria-label="Original and translations">
+      ${
+        mobilePanes.length > 1
+          ? `<p class="poem-deck__hint">Swipe for translations</p>`
+          : ""
+      }
+      <div class="poem-deck__track" tabindex="0">
+        ${deckPanes}
+      </div>
+      ${
+        mobilePanes.length > 1
+          ? `<div class="poem-deck__dots" role="tablist" aria-label="Panels">${deckDots}</div>`
+          : ""
+      }
+    </div>
+
     <div class="poem-columns">
       <section class="poem-col">
         ${
@@ -256,13 +372,7 @@ function render(poem, enText, translations, activeIndex) {
         <h2 class="poem-col__label">Russian</h2>
         ${
           t
-            ? (() => {
-                const { html, aside } = formatTranslationHtml(
-                  t.text,
-                  t.footnotes || []
-                );
-                return `<pre class="poem-col__text">${html}</pre>${aside}`;
-              })()
+            ? translationPaneHtml(t)
             : `<pre class="poem-col__text">No translation in the archive yet.</pre>`
         }
       </section>
@@ -276,6 +386,7 @@ function render(poem, enText, translations, activeIndex) {
       render(poem, enText, translations, i);
     });
   }
+  setupMobileDeck();
 }
 
 function goToRandomPoem(poems, exceptId = null) {

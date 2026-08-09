@@ -231,8 +231,100 @@
   text-decoration: underline;
 }
 
+/* Mobile: swipe deck. Desktop: side-by-side columns. */
+.poem-deck {
+  display: none;
+}
+
 @media (max-width: 799px) {
   .poem-page__controls--spacer {
     display: none;
+  }
+
+  .poem-columns {
+    display: none;
+  }
+
+  .poem-deck {
+    display: block;
+    margin: 0 -1rem;
+  }
+
+  .poem-deck__hint {
+    margin: 0 1rem 0.65rem;
+    text-align: center;
+    font-size: 0.82em;
+    font-style: italic;
+    color: var(--ink-faint);
+    opacity: 0.75;
+  }
+
+  .poem-deck__track {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+
+  .poem-deck__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .poem-pane {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    box-sizing: border-box;
+    padding: 0 1rem 1.5rem;
+    min-width: 0;
+  }
+
+  .poem-pane__sub {
+    margin: -0.35rem 0 0.85rem;
+    text-align: center;
+    font-size: 0.9em;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .poem-pane--empty .poem-col__text {
+    color: var(--ink-faint);
+    font-style: italic;
+    white-space: normal;
+  }
+
+  .poem-deck__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.25rem 1rem 0.5rem;
+  }
+
+  .poem-deck__dot {
+    appearance: none;
+    width: 0.45rem;
+    height: 0.45rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--ink-faint) 55%, transparent);
+    cursor: pointer;
+  }
+
+  .poem-deck__dot.is-active {
+    background: var(--accent);
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: 799px) and (prefers-reduced-motion: reduce) {
+  .poem-deck__track {
+    scroll-behavior: auto;
   }
 }
