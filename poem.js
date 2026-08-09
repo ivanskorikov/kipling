@@ -73,9 +73,13 @@ function superRunToId(run) {
 /**
  * Turn footnote markers into linked superscripts and render the note list.
  * Supports Unicode superscripts (⁸¹⁹) and glued OCR digits (Майванд1274).
+ *
+ * idPrefix keeps mobile-deck and desktop-column footnote ids unique — both
+ * layouts are in the DOM, and duplicate #fn-N targets break in-page links.
  */
-function formatTranslationHtml(text, footnotes) {
+function formatTranslationHtml(text, footnotes, idPrefix = "") {
   const byId = new Map(footnotes.map((f) => [f.id, f.text]));
+  const domId = (id) => `fn-${idPrefix}${id}`;
 
   function isAsciiFootnoteMarker(text, start, end, id) {
     const n = Number(id);
@@ -131,7 +135,7 @@ function formatTranslationHtml(text, footnotes) {
   let html = escapeHtml(marked);
   html = html.replace(/\u0000(\d{1,4})\u0000/g, (_, id) => {
     const tip = byId.has(id) ? ` title="${escapeHtml(byId.get(id))}"` : "";
-    return `<sup class="fn-ref"${tip}><a href="#fn-${id}">${id}</a></sup>`;
+    return `<sup class="fn-ref"${tip}><a href="#${domId(id)}">${id}</a></sup>`;
   });
 
   // Show every appendix note (title-level notes may have no body marker),
@@ -152,7 +156,7 @@ function formatTranslationHtml(text, footnotes) {
               newWindow: true,
             })
           : "<i>Note missing from source.</i>";
-        return `<li id="fn-${f.id}"><span class="poem-footnotes__num">${f.id}</span> ${body}</li>`;
+        return `<li id="${domId(f.id)}"><span class="poem-footnotes__num">${f.id}</span> ${body}</li>`;
       })
       .join(
         ""
@@ -236,8 +240,8 @@ function optionLabel(tr) {
   return `${tr.title} — ${tr.translator}`;
 }
 
-function translationPaneHtml(tr) {
-  const { html, aside } = formatTranslationHtml(tr.text, tr.footnotes || []);
+function translationPaneHtml(tr, idPrefix = "") {
+  const { html, aside } = formatTranslationHtml(tr.text, tr.footnotes || [], idPrefix);
   return `<pre class="poem-col__text">${html}</pre>${aside}`;
 }
 
@@ -261,15 +265,15 @@ function buildMobilePanes(enText, translations) {
     });
     return panes;
   }
-  for (const tr of translations) {
+  translations.forEach((tr, i) => {
     panes.push({
       key: tr.file,
       label: tr.title,
       sub: tr.translator,
-      body: translationPaneHtml(tr),
+      body: translationPaneHtml(tr, `m${i}-`),
       empty: false,
     });
-  }
+  });
   return panes;
 }
 
@@ -399,7 +403,7 @@ function render(poem, enText, translations, activeIndex) {
         <h2 class="poem-col__label">Russian</h2>
         ${
           t
-            ? translationPaneHtml(t)
+            ? translationPaneHtml(t, "d-")
             : `<pre class="poem-col__text">No translation in the archive yet.</pre>`
         }
       </section>
@@ -414,6 +418,22 @@ function render(poem, enText, translations, activeIndex) {
     });
   }
   setupMobileDeck();
+  setupFootnoteLinks();
+}
+
+/** Scroll to in-page footnote targets (hash jumps are unreliable with duplicate layouts). */
+function setupFootnoteLinks() {
+  page.querySelectorAll("sup.fn-ref a[href^='#fn-']").forEach((a) => {
+    a.addEventListener("click", (event) => {
+      const id = a.getAttribute("href")?.slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      history.replaceState(null, "", `#${id}`);
+    });
+  });
 }
 
 function goToRandomPoem(poems, exceptId = null) {
