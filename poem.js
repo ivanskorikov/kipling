@@ -16,7 +16,8 @@ const nextEl = document.getElementById("next-poem");
 
 async function loadText(folder, file) {
   const url = `poems/${encodeURIComponent(folder)}/${encodeURIComponent(file)}`;
-  const res = await fetch(url);
+  // no-store: local poem edits must show on refresh (browser otherwise caches .txt).
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`Missing ${file} (${res.status})`);
   return (await res.text()).replace(/\r\n/g, "\n").trimEnd();
 }
@@ -485,7 +486,7 @@ function setupBrowseNav(poems, currentId) {
 const randomEl = document.getElementById("random-poem");
 
 try {
-  const index = await fetch("data/poems.json?v=20").then((r) => {
+  const index = await fetch("data/poems.json?v=21").then((r) => {
     if (!r.ok) throw new Error(`Could not load poem index (${r.status})`);
     return r.json();
   });

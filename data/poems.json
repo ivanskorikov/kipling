@@ -452,12 +452,6 @@
       "enFile": "en,A Nativity,Rudyard Kipling,1916.txt",
       "translations": [
         {
-          "title": "Рождество уж на носу — и позади сезон дождей.",
-          "translator": "Галина Усова",
-          "year": 0,
-          "file": "ru,Рождество уж на носу — и позади сезон дождей.,Галина Усова,0.txt"
-        },
-        {
           "title": "Рождество",
           "translator": "Елена Кистерова",
           "year": 0,
@@ -470,7 +464,7 @@
           "file": "ru,Рождество,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 3
+      "translationCount": 2
     },
     {
       "id": "AnewAuldLangSyne",
@@ -541,12 +535,6 @@
           "file": "ru,Песнь пиктов,Илья Оказов,0.txt"
         },
         {
-          "title": "Песнь митре (тридцатый легион, ок. 350 г.)",
-          "translator": "Михаил Гаспаров",
-          "year": 0,
-          "file": "ru,Песнь митре (тридцатый легион@@@ ок. 350 г.),Михаил Гаспаров,0.txt"
-        },
-        {
           "title": "Песнь пиктов",
           "translator": "Сергей Сапожников",
           "year": 0,
@@ -557,15 +545,9 @@
           "translator": "Эдуард Шустер",
           "year": 0,
           "file": "ru,Песнь пиктов,Эдуард Шустер,0.txt"
-        },
-        {
-          "title": "Тупые копыта Рима",
-          "translator": "Эдуард Шустер",
-          "year": 0,
-          "file": "ru,Тупые копыта Рима,Эдуард Шустер,0.txt"
         }
       ],
-      "translationCount": 7
+      "translationCount": 5
     },
     {
       "id": "APilgrim’sWay",
