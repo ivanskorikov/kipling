@@ -716,10 +716,10 @@
       "enFile": "en,A Song in Storm,Rudyard Kipling,1915.txt",
       "translations": [
         {
-          "title": "Песня во время шторма. 1914-1918",
+          "title": "Песня во время шторма",
           "translator": "Евгений Фельдман",
           "year": 1914,
-          "file": "ru,Песня во время шторма. 1914-1918,Евгений Фельдман,1914.txt"
+          "file": "ru,Песня во время шторма,Евгений Фельдман,1914.txt"
         },
         {
           "title": "Песня в шторм",
@@ -991,10 +991,10 @@
       "enFile": "en,A Truthful Song,Rudyard Kipling,1910.txt",
       "translations": [
         {
-          "title": "Бог весть куда!",
+          "title": "Правдивая песня",
           "translator": "Сергей Сапожников",
           "year": 0,
-          "file": "ru,Бог весть куда!,Сергей Сапожников,0.txt"
+          "file": "ru,Правдивая песня,Сергей Сапожников,0.txt"
         }
       ],
       "translationCount": 1
@@ -1200,10 +1200,10 @@
       "enFile": "en,An Imperial Rescript,Rudyard Kipling,1890.txt",
       "translations": [
         {
-          "title": "Императорский рескрипт. 1890",
+          "title": "Императорский рескрипт",
           "translator": "Евгений Фельдман",
           "year": 1890,
-          "file": "ru,Императорский рескрипт. 1890,Евгений Фельдман,1890.txt"
+          "file": "ru,Императорский рескрипт,Евгений Фельдман,1890.txt"
         },
         {
           "title": "Императорский рескрипт",
@@ -1237,18 +1237,6 @@
       "enFile": "en,An Old Song,Rudyard Kipling,1887.txt",
       "translations": [
         {
-          "title": "Очень старая песня",
-          "translator": "Василий Бетаки",
-          "year": 0,
-          "file": "ru,Очень старая песня,Василий Бетаки,0.txt"
-        },
-        {
-          "title": "Очень старая песня",
-          "translator": "Владимир Гаспаров",
-          "year": 0,
-          "file": "ru,Очень старая песня,Владимир Гаспаров,0.txt"
-        },
-        {
           "title": "Старая песня",
           "translator": "Сергей Сапожников",
           "year": 0,
@@ -1261,7 +1249,7 @@
           "file": "ru,Старая песня,Юрий Соколов,0.txt"
         }
       ],
-      "translationCount": 4
+      "translationCount": 2
     },
     {
       "id": "AnchorSong",
@@ -1407,9 +1395,15 @@
           "translator": "Евгений Фельдман",
           "year": 1932,
           "file": "ru,Святой Павел перед казнью,Евгений Фельдман,1932.txt"
+        },
+        {
+          "title": "На его казни",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,На его казни,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "AttheBar",
@@ -10347,6 +10341,18 @@
       "enFile": "en,The Oldest Song,Rudyard Kipling,1914.txt",
       "translations": [
         {
+          "title": "Очень старая песня",
+          "translator": "Василий Бетаки",
+          "year": 0,
+          "file": "ru,Очень старая песня,Василий Бетаки,0.txt"
+        },
+        {
+          "title": "Очень старая песня",
+          "translator": "Владимир Гаспаров",
+          "year": 0,
+          "file": "ru,Очень старая песня,Владимир Гаспаров,0.txt"
+        },
+        {
           "title": "Самая старая песня",
           "translator": "Михаил Фроман",
           "year": 0,
@@ -10359,7 +10365,7 @@
           "file": "ru,Старейшая из песен,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 2
+      "translationCount": 4
     },
     {
       "id": "TheOnlySon",
@@ -11305,8 +11311,15 @@
       "year": 1902,
       "author": "Rudyard Kipling",
       "enFile": "en,The Rowers,Rudyard Kipling,1902.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "Гребцы",
+          "translator": "Сергей Сапожников",
+          "year": 1902,
+          "file": "ru,Гребцы,Сергей Сапожников,1902.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "TheRunoftheDowns",

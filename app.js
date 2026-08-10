@@ -285,7 +285,7 @@ const initialQuery = params.get("q") || "";
 const initialWithTranslation = params.get("withTranslation") === "1";
 const initialSort = params.get("sort") || "title-asc";
 
-const data = await fetch("data/poems.json?v=21").then((r) => {
+const data = await fetch("data/poems.json?v=22").then((r) => {
   if (!r.ok) throw new Error("Failed to load poems index");
   return r.json();
 });
