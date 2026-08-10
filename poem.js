@@ -55,6 +55,15 @@ function splitFootnotes(text) {
   return { body, footnotes };
 }
 
+/** Markdown-lite emphasis inside already-escaped poem HTML. */
+function applyInlineEmphasis(escapedHtml) {
+  return escapedHtml.replace(/\*([^*\n]+)\*/g, "<i>$1</i>");
+}
+
+function formatOriginalHtml(text) {
+  return applyInlineEmphasis(escapeHtml(text));
+}
+
 const SUPER_DIGITS = "⁰¹²³⁴⁵⁶⁷⁸⁹";
 const SUPER_TO_ASCII = Object.fromEntries(
   [...SUPER_DIGITS].map((ch, i) => [ch, String(i)])
@@ -133,8 +142,8 @@ function formatTranslationHtml(text, footnotes, idPrefix = "") {
   });
 
   let html = escapeHtml(marked);
-  // Light emphasis: *word* → italics (e.g. slang *пэг*).
-  html = html.replace(/\*([^*\n]+)\*/g, "<i>$1</i>");
+  // Light emphasis: *word* → italics (e.g. slang *пэг*, inset stanzas).
+  html = applyInlineEmphasis(html);
   html = html.replace(/\u0000(\d{1,4})\u0000/g, (_, id) => {
     const tip = byId.has(id) ? ` title="${escapeHtml(byId.get(id))}"` : "";
     return `<sup class="fn-ref"${tip}><a href="#${domId(id)}">${id}</a></sup>`;
@@ -259,7 +268,7 @@ function buildMobilePanes(enText, translations) {
       key: "en",
       label: "English",
       sub: "Original",
-      body: `<pre class="poem-col__text">${escapeHtml(enText)}</pre>`,
+      body: `<pre class="poem-col__text">${formatOriginalHtml(enText)}</pre>`,
       empty: false,
     },
   ];
@@ -393,7 +402,7 @@ function render(poem, enText, translations, activeIndex) {
             : ""
         }
         <h2 class="poem-col__label">English</h2>
-        <pre class="poem-col__text">${escapeHtml(enText)}</pre>
+        <pre class="poem-col__text">${formatOriginalHtml(enText)}</pre>
       </section>
       <section class="poem-col ${t ? "" : "poem-col--empty"}">
         ${
