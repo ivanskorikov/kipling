@@ -13291,12 +13291,6 @@
       "enFile": "en,To Thomas Atkins,Rudyard Kipling,1892.txt",
       "translations": [
         {
-          "title": "Казарменные баллады.",
-          "translator": "Ада Оношкович-Яцына",
-          "year": 0,
-          "file": "ru,Казарменные баллады.,Ада Оношкович-Яцына,0.txt"
-        },
-        {
           "title": "Посвящение Томасу Аткинсу",
           "translator": "Василий Бетаки",
           "year": 0,
@@ -13315,19 +13309,13 @@
           "file": "ru,Томасу Аткинсу,Евгений Фельдман,1989.txt"
         },
         {
-          "title": "Эта книга – про твоё",
-          "translator": "Евгений Фельдман",
-          "year": 1989,
-          "file": "ru,Эта книга – про твоё,Евгений Фельдман,1989.txt"
-        },
-        {
           "title": "Томасу Аткинсу",
           "translator": "Сергей Сапожников",
           "year": 0,
           "file": "ru,Томасу Аткинсу,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 6
+      "translationCount": 4
     },
     {
       "id": "ToYou",
@@ -13988,6 +13976,12 @@
       "translations": [
         {
           "title": "Бобс",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Бобс,Сергей Сапожников,0.txt"
+        },
+        {
+          "title": "Бобс",
           "translator": "Эдуард Ермаков",
           "year": 0,
           "file": "ru,Бобс,Эдуард Ермаков,0.txt"
@@ -13999,7 +13993,7 @@
           "file": "ru,Бобс,Эдуард Шустер,0.txt"
         }
       ],
-      "translationCount": 2
+      "translationCount": 3
     },
     {
       "id": "‘Cleared’",
@@ -14036,6 +14030,12 @@
       "enFile": "en,‘When ‘Omer smote ‘is Blooming Lyre,Rudyard Kipling,1896.txt",
       "translations": [
         {
+          "title": "Гомер сломал и бросил лиру",
+          "translator": "Ада Оношкович-Яцына",
+          "year": 0,
+          "file": "ru,Гомер сломал и бросил лиру,Ада Оношкович-Яцына,0.txt"
+        },
+        {
           "title": "Гомер все на свете легенды знал,",
           "translator": "Александр Щербаков",
           "year": 0,
@@ -14048,7 +14048,7 @@
           "file": "ru,Гомер@@@ гремя на сучьей лире.,Евгений Фельдман,1989.txt"
         }
       ],
-      "translationCount": 2
+      "translationCount": 3
     },
     {
       "id": "‘Wilful-Missing’",

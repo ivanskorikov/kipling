@@ -26,7 +26,7 @@ export const FONTS_WITHOUT_CYRILLIC = [
 
 const DEFAULTS = {
   fontId: "eb-garamond",
-  sizePx: 26,
+  sizePx: 24,
   bold: false,
 };
 
