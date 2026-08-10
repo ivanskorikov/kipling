@@ -133,6 +133,8 @@ function formatTranslationHtml(text, footnotes, idPrefix = "") {
   });
 
   let html = escapeHtml(marked);
+  // Light emphasis: *word* → italics (e.g. slang *пэг*).
+  html = html.replace(/\*([^*\n]+)\*/g, "<i>$1</i>");
   html = html.replace(/\u0000(\d{1,4})\u0000/g, (_, id) => {
     const tip = byId.has(id) ? ` title="${escapeHtml(byId.get(id))}"` : "";
     return `<sup class="fn-ref"${tip}><a href="#${domId(id)}">${id}</a></sup>`;
@@ -177,17 +179,23 @@ function formatTranslationHtml(text, footnotes, idPrefix = "") {
  */
 function alignTranslationToOriginal(enText, ruText) {
   const enLines = enText.replace(/\r\n/g, "\n").split("\n");
-  const ruRawLines = ruText.replace(/\r\n/g, "\n").trim().split("\n");
+  // Drop only leading/trailing blank lines — not spaces on the first verse line.
+  const ruRawLines = ruText
+    .replace(/\r\n/g, "\n")
+    .replace(/^\n+/, "")
+    .replace(/\n+$/, "")
+    .split("\n");
+  // Keep leading indent (e.g. inset opening stanza); only trim trailing space.
   const ruContent = ruRawLines
     .filter((l) => l.trim().length > 0)
-    .map((l) => l.replace(/^\s+/, "").trimEnd());
+    .map((l) => l.replace(/\s+$/u, ""));
   const enContentCount = enLines.filter((l) => l.trim().length > 0).length;
   // Ignore leading/trailing blanks — only internal gaps count as stanza breaks.
   const ruBlankCount = ruRawLines.filter((l) => !l.trim()).length;
 
   if (!enContentCount || !ruContent.length) return ruText;
 
-  // 1) Perfect match: copy English blank lines only (no leading indent).
+  // 1) Perfect match: copy English blank-line grid; keep RU leading indent.
   if (enContentCount === ruContent.length) {
     let i = 0;
     const out = [];
@@ -468,7 +476,7 @@ function setupBrowseNav(poems, currentId) {
 const randomEl = document.getElementById("random-poem");
 
 try {
-  const index = await fetch("data/poems.json?v=19").then((r) => {
+  const index = await fetch("data/poems.json?v=20").then((r) => {
     if (!r.ok) throw new Error(`Could not load poem index (${r.status})`);
     return r.json();
   });

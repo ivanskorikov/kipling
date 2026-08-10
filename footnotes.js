@@ -5,7 +5,7 @@ const countEl = document.getElementById("fn-count");
 const searchEl = document.getElementById("fn-search");
 
 try {
-  const data = await fetch("data/footnotes.json?v=1").then((r) => {
+  const data = await fetch("data/footnotes.json?v=5").then((r) => {
     if (!r.ok) throw new Error(`Could not load footnotes (${r.status})`);
     return r.json();
   });
