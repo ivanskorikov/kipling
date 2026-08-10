@@ -152,6 +152,12 @@ body {
   pointer-events: none;
 }
 
+@media (max-width: 799px) {
+  .paper::before {
+    content: none;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
