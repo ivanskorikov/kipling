@@ -85,7 +85,7 @@ function render() {
 
 searchEl.addEventListener("input", render);
 
-const data = await fetch("data/poems.json?v=16").then((r) => {
+const data = await fetch("data/poems.json?v=18").then((r) => {
   if (!r.ok) throw new Error("Failed to load poems index");
   return r.json();
 });

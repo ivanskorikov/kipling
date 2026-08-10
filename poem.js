@@ -468,7 +468,7 @@ function setupBrowseNav(poems, currentId) {
 const randomEl = document.getElementById("random-poem");
 
 try {
-  const index = await fetch("data/poems.json?v=16").then((r) => {
+  const index = await fetch("data/poems.json?v=18").then((r) => {
     if (!r.ok) throw new Error(`Could not load poem index (${r.status})`);
     return r.json();
   });
