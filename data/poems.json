@@ -1466,12 +1466,6 @@
       "translations": [
         {
           "title": "Бляхи",
-          "translator": "Александр Щербаков",
-          "year": 0,
-          "file": "ru,Бляхи,Александр Щербаков,0.txt"
-        },
-        {
-          "title": "Бляхи",
           "translator": "Георгий Бен",
           "year": 0,
           "file": "ru,Бляхи,Георгий Бен,0.txt"
@@ -1495,7 +1489,7 @@
           "file": "ru,Бляхи,Сергей Степанов,1994.txt"
         }
       ],
-      "translationCount": 5
+      "translationCount": 4
     },
     {
       "id": "BigSteamers",
@@ -1505,16 +1499,16 @@
       "enFile": "en,Big Steamers,Rudyard Kipling,1911.txt",
       "translations": [
         {
-          "title": "Большие Пароходы, 1914-1918",
+          "title": "Большие Пароходы",
           "translator": "Евгений Фельдман",
           "year": 1911,
-          "file": "ru,Большие Пароходы@@@ 1914-1918,Евгений Фельдман,1911.txt"
+          "file": "ru,Большие Пароходы,Евгений Фельдман,1911.txt"
         },
         {
-          "title": "О войнах кровавых не вспомнит никто...",
+          "title": "Большие пароходы",
           "translator": "Сергей Сапожников",
           "year": 0,
-          "file": "ru,О войнах кровавых не вспомнит никто...,Сергей Сапожников,0.txt"
+          "file": "ru,Большие пароходы,Сергей Сапожников,0.txt"
         }
       ],
       "translationCount": 2
@@ -3578,8 +3572,15 @@
       "year": 1894,
       "author": "Rudyard Kipling",
       "enFile": "en,Hunting Song of the Seeonee Pack,Rudyard Kipling,1894.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "Охотничья песнь Сионийской Стаи",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Охотничья песнь Сионийской Стаи,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "HymnbeforeAction",
@@ -4490,9 +4491,15 @@
           "translator": "Василий Бетаки",
           "year": 0,
           "file": "ru,Поучения Балу,Василий Бетаки,0.txt"
+        },
+        {
+          "title": "«Пятнист Леопард и наряден…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Пятнист Леопард и наряден…»,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "McAndrew’sHymn",
@@ -5007,9 +5014,15 @@
           "translator": "Василий Бетаки",
           "year": 0,
           "file": "ru,Вечерняя песнь в джунглях,Василий Бетаки,0.txt"
+        },
+        {
+          "title": "«Бесшумно Чиль парит в ночи…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Бесшумно Чиль парит в ночи…»,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "NormanandSaxon",
@@ -5112,8 +5125,15 @@
       "year": 1894,
       "author": "Rudyard Kipling",
       "enFile": "en,Oh ! hush thee my baby …”,Rudyard Kipling,1894.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Усни, баю-баю…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Усни@@@ баю-баю…»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "OldManKangaroo",
@@ -5972,10 +5992,10 @@
           "file": "ru,Ромул и Рем,Евгений Фельдман,1996.txt"
         },
         {
-          "title": "Расти будет тут!",
+          "title": "Ромул и Рем",
           "translator": "Сергей Сапожников",
           "year": 0,
-          "file": "ru,Расти будет тут!,Сергей Сапожников,0.txt"
+          "file": "ru,Ромул и Рем,Сергей Сапожников,0.txt"
         }
       ],
       "translationCount": 2
@@ -12074,8 +12094,15 @@
       "year": 1895,
       "author": "Rudyard Kipling",
       "enFile": "en,The stream is shrunk,Rudyard Kipling,1895.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Ручей зачах, и сушь в пруду…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Ручей зачах@@@ и сушь в пруду…»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "Thestumblingblock…",
@@ -14139,10 +14166,10 @@
       "enFile": "en,“At the hole where he went in…”,Rudyard Kipling,1894.txt",
       "translations": [
         {
-          "title": "Весенний бег",
+          "title": "«В дом змеиный как-то раз…»",
           "translator": "Сергей Сапожников",
           "year": 0,
-          "file": "ru,Весенний бег,Сергей Сапожников,0.txt"
+          "file": "ru,«В дом змеиный как-то раз…»,Сергей Сапожников,0.txt"
         }
       ],
       "translationCount": 1
@@ -14170,10 +14197,10 @@
           "file": "ru,Я в армии снова...,Александр Щербаков,0.txt"
         },
         {
-          "title": "«Вернулся я в Армию снова»",
+          "title": "Вернулся я в Армию снова",
           "translator": "Евгений Фельдман",
           "year": 1990,
-          "file": "ru,«Вернулся я в Армию снова»,Евгений Фельдман,1990.txt"
+          "file": "ru,Вернулся я в Армию снова,Евгений Фельдман,1990.txt"
         },
         {
           "title": "В армии я не впервой",
@@ -14198,10 +14225,10 @@
       "enFile": "en,“Banquet Night”,Rudyard Kipling,1926.txt",
       "translations": [
         {
-          "title": "«Ночной пир»",
+          "title": "Ночной пир",
           "translator": "Евгений Фельдман",
           "year": 1919,
-          "file": "ru,«Ночной пир»,Евгений Фельдман,1919.txt"
+          "file": "ru,Ночной пир,Евгений Фельдман,1919.txt"
         },
         {
           "title": "Ночь пиршества",
@@ -14350,8 +14377,15 @@
       "year": 1895,
       "author": "Rudyard Kipling",
       "enFile": "en,“For our white and our excellent nights…””,Rudyard Kipling,1895.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Ради светлых и ясных, чудесных ночей…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Ради светлых и ясных@@@ чудесных ночей…»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "“FortheWomen”",
@@ -14499,8 +14533,15 @@
       "year": 1894,
       "author": "Rudyard Kipling",
       "enFile": "en,“I will remember what I was…”,Rudyard Kipling,1894.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Я вспомню, кем я прежде был…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Я вспомню@@@ кем я прежде был…»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "“IfIhavetakenthecommonclay”",
@@ -14647,8 +14688,15 @@
       "year": 1895,
       "author": "Rudyard Kipling",
       "enFile": "en,“Man goes to Man”,Rudyard Kipling,1895.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Человек идёт к Людям!»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Человек идёт к Людям!»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "“Mary,PityWomen!”",
@@ -15045,9 +15093,15 @@
           "translator": "Евгений Фельдман",
           "year": 1996,
           "file": "ru,Песня Северного Охотника,Евгений Фельдман,1996.txt"
+        },
+        {
+          "title": "«Податлив, как талый снег…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Податлив@@@ как талый снег…»,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "“Theskyislead…”",
@@ -15188,8 +15242,15 @@
       "year": 1895,
       "author": "Rudyard Kipling",
       "enFile": "en,“These are the Four…”,Rudyard Kipling,1895.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Вечно неймётся четвёрке такой…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Вечно неймётся четвёрке такой…»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "“Theyburntacorpse…”",
@@ -15307,8 +15368,15 @@
       "year": 1895,
       "author": "Rudyard Kipling",
       "enFile": "en,“Veil them@@@ cover them …”,Rudyard Kipling,1895.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«В знак забвенья пускай жильё…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«В знак забвенья пускай жильё…»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "“VerseFragmentsandLimericks”",
@@ -15399,8 +15467,15 @@
       "year": 1894,
       "author": "Rudyard Kipling",
       "enFile": "en,“What of the Hunting...”,Rudyard Kipling,1894.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Славный охотник, как дела?»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Славный охотник@@@ как дела?»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "“WhenaLoverhiesabroad”",
@@ -15475,8 +15550,15 @@
       "year": 1894,
       "author": "Rudyard Kipling",
       "enFile": "en,“You mustn’t swim till you’re six weeks old…”,Rudyard Kipling,1894.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "«Берегись, у волны нрав крут…»",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,«Берегись@@@ у волны нрав крут…»,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "“Yourpatience,Sirs”",
