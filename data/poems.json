@@ -10135,13 +10135,19 @@
       "enFile": "en,The Mother Lodge,Rudyard Kipling,1895.txt",
       "translations": [
         {
+          "title": "Ложа-мать",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Ложа-мать,Сергей Сапожников,0.txt"
+        },
+        {
           "title": "Мать — Ложа",
           "translator": "Эдуард Ермаков",
           "year": 0,
           "file": "ru,Мать — Ложа,Эдуард Ермаков,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "TheMother’sSon",
