@@ -3511,15 +3511,8 @@
       "year": 1884,
       "author": "Rudyard Kipling",
       "enFile": "en,His Consolation,Rudyard Kipling,1884.txt",
-      "translations": [
-        {
-          "title": "Его утешение",
-          "translator": "Сергей Сапожников",
-          "year": 0,
-          "file": "ru,Его утешение,Сергей Сапожников,0.txt"
-        }
-      ],
-      "translationCount": 1
+      "translations": [],
+      "translationCount": 0
     },
     {
       "id": "HisConsolation(TheirConsolation)",
@@ -4699,10 +4692,10 @@
           "file": "ru,Условие Мульголланда,Ада Оношкович-Яцына,0.txt"
         },
         {
-          "title": "Ты в честь хозяюшки спали... Едва добрались в порт.",
+          "title": "Договор Малхолленда",
           "translator": "Сергей Сапожников",
           "year": 1894,
-          "file": "ru,Ты в честь хозяюшки спали... Едва добрались в порт.,Сергей Сапожников,1894.txt"
+          "file": "ru,Договор Малхолленда,Сергей Сапожников,1894.txt"
         }
       ],
       "translationCount": 2
