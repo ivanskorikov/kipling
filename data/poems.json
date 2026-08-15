@@ -1917,6 +1917,70 @@
       "translationCount": 1
     },
     {
+      "id": "ChapterHeadings–Life’sHandicap",
+      "title": "Chapter Headings – Life’s Handicap",
+      "year": 1891,
+      "author": "Rudyard Kipling",
+      "enFile": "en,Chapter Headings – Life’s Handicap,Rudyard Kipling,1891.txt",
+      "translations": [
+        {
+          "title": "Эпиграфы, Жизнь даёт фору",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Эпиграфы@@@ Жизнь даёт фору,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
+    },
+    {
+      "id": "ChapterHeadings–ManyInventions",
+      "title": "Chapter Headings – Many Inventions",
+      "year": 1893,
+      "author": "Rudyard Kipling",
+      "enFile": "en,Chapter Headings – Many Inventions,Rudyard Kipling,1893.txt",
+      "translations": [
+        {
+          "title": "Эпиграфы, Судно, нашедшее себя",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Эпиграфы@@@ Судно@@@ нашедшее себя,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
+    },
+    {
+      "id": "ChapterHeadings–PlainTalesfromtheHills",
+      "title": "Chapter Headings – Plain Tales from the Hills",
+      "year": 1888,
+      "author": "Rudyard Kipling",
+      "enFile": "en,Chapter Headings – Plain Tales from the Hills,Rudyard Kipling,1888.txt",
+      "translations": [
+        {
+          "title": "Эпиграфы к главам, Простые рассказы с гор",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Эпиграфы к главам@@@ Простые рассказы с гор,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
+    },
+    {
+      "id": "ChapterHeadings–SoldiersThree",
+      "title": "Chapter Headings – Soldiers Three",
+      "year": 1888,
+      "author": "Rudyard Kipling",
+      "enFile": "en,Chapter Headings – Soldiers Three,Rudyard Kipling,1888.txt",
+      "translations": [
+        {
+          "title": "Эпиграфы, Взятие Лангтангпена",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Эпиграфы@@@ Взятие Лангтангпена,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
+    },
+    {
       "id": "ChapterHeadings–TheJungleBooks",
       "title": "Chapter Headings – The Jungle Books",
       "year": 1894,
@@ -1924,6 +1988,38 @@
       "enFile": "en,Chapter Headings – The Jungle Books,Rudyard Kipling,1894.txt",
       "translations": [],
       "translationCount": 0
+    },
+    {
+      "id": "ChapterHeadings–TheLightthatFailed",
+      "title": "Chapter Headings – The Light that Failed",
+      "year": 1891,
+      "author": "Rudyard Kipling",
+      "enFile": "en,Chapter Headings – The Light that Failed,Rudyard Kipling,1891.txt",
+      "translations": [
+        {
+          "title": "Эпиграфы, Свет погас",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Эпиграфы@@@ Свет погас,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
+    },
+    {
+      "id": "ChapterHeadings–TheNaulahka",
+      "title": "Chapter Headings – The Naulahka",
+      "year": 1892,
+      "author": "Rudyard Kipling",
+      "enFile": "en,Chapter Headings – The Naulahka,Rudyard Kipling,1892.txt",
+      "translations": [
+        {
+          "title": "Эпиграфы к главам, Наулахка",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Эпиграфы к главам@@@ Наулахка,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "ChartresWindows",
@@ -3446,8 +3542,15 @@
       "year": 1915,
       "author": "Rudyard Kipling",
       "enFile": "en,Harwich Ladies (Greenwich Ladies),Rudyard Kipling,1915.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "На краю флота",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,На краю флота,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "Haste",
@@ -3732,12 +3835,18 @@
         },
         {
           "title": "Когда...",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Когда...,Сергей Сапожников,0.txt"
+        },
+        {
+          "title": "Когда...",
           "translator": "Юрий Изотов",
           "year": 0,
           "file": "ru,Когда...,Юрий Изотов,0.txt"
         }
       ],
-      "translationCount": 5
+      "translationCount": 6
     },
     {
       "id": "Illusion,Disillusion,Allusion",
@@ -5108,9 +5217,15 @@
           "translator": "Евгений Фельдман",
           "year": 2001,
           "file": "ru,Beast and Man in India. 4. Pigs and Buffaloes,Евгений Фельдман,2001.txt"
+        },
+        {
+          "title": "Кабаны и буйволы",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Кабаны и буйволы,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "Oh!hushtheemybaby…”",
@@ -5394,8 +5509,15 @@
       "year": 1894,
       "author": "Rudyard Kipling",
       "enFile": "en,Parade Song of the Camp Animals,Rudyard Kipling,1894.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "Строевая песня армейских животных",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Строевая песня армейских животных,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "Parting",
@@ -5432,10 +5554,10 @@
       "enFile": "en,Pharaoh and the Sergeant,Rudyard Kipling,1897.txt",
       "translations": [
         {
-          "title": "Ирландии нет!",
+          "title": "Фараон и сержант",
           "translator": "Сергей Сапожников",
           "year": 0,
-          "file": "ru,Ирландии нет!,Сергей Сапожников,0.txt"
+          "file": "ru,Фараон и сержант,Сергей Сапожников,0.txt"
         }
       ],
       "translationCount": 1
@@ -8095,15 +8217,9 @@
           "translator": "Евгений Фельдман",
           "year": 2001,
           "file": "ru,Beast and Man in India. 3. The Elephant,Евгений Фельдман,2001.txt"
-        },
-        {
-          "title": "Слон",
-          "translator": "Сергей Сапожников",
-          "year": 0,
-          "file": "ru,Слон,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 2
+      "translationCount": 1
     },
     {
       "id": "TheEnglishFlag",
@@ -9949,6 +10065,22 @@
       "translationCount": 1
     },
     {
+      "id": "TheMarredDrivesofWindsor",
+      "title": "The Marred Drives of Windsor",
+      "year": 1904,
+      "author": "Rudyard Kipling",
+      "enFile": "en,The Marred Drives of Windsor,Rudyard Kipling,1904.txt",
+      "translations": [
+        {
+          "title": "Виндзорская околесица",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Виндзорская околесица,Сергей Сапожников,0.txt"
+        }
+      ],
+      "translationCount": 1
+    },
+    {
       "id": "TheMarriedMan",
       "title": "The Married Man",
       "year": 1903,
@@ -10112,10 +10244,10 @@
       "enFile": "en,The Moral,Rudyard Kipling,1919.txt",
       "translations": [
         {
-          "title": "Увидеть туч чудесный клин",
+          "title": "Наставление",
           "translator": "Сергей Сапожников",
           "year": 0,
-          "file": "ru,Увидеть туч чудесный клин,Сергей Сапожников,0.txt"
+          "file": "ru,Наставление,Сергей Сапожников,0.txt"
         }
       ],
       "translationCount": 1
@@ -10819,10 +10951,10 @@
           "file": "ru,Мирскую суету скорей,Сергей Александровский,0.txt"
         },
         {
-          "title": "Молитва МирIAM Козн",
+          "title": "Молитва Мириам Коэн",
           "translator": "Сергей Сапожников",
           "year": 0,
-          "file": "ru,Молитва МирIAM Козн,Сергей Сапожников,0.txt"
+          "file": "ru,Молитва Мириам Коэн,Сергей Сапожников,0.txt"
         },
         {
           "title": "Молитва мириам коэн",
@@ -14038,8 +14170,15 @@
       "year": 1890,
       "author": "Rudyard Kipling",
       "enFile": "en,‘Cleared’,Rudyard Kipling,1890.txt",
-      "translations": [],
-      "translationCount": 0
+      "translations": [
+        {
+          "title": "Оправданы!",
+          "translator": "Сергей Сапожников",
+          "year": 1890,
+          "file": "ru,Оправданы!,Сергей Сапожников,1890.txt"
+        }
+      ],
+      "translationCount": 1
     },
     {
       "id": "‘Lessyouwantyourtoestrodoff",
@@ -14934,9 +15073,15 @@
           "translator": "Евгений Фельдман",
           "year": 2001,
           "file": "ru,The Beasts are Very Wise,Евгений Фельдман,2001.txt"
+        },
+        {
+          "title": "Разумны звери сплошь",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Разумны звери сплошь,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "“TheCityofBrass”",
@@ -15213,9 +15358,15 @@
           "translator": "Евгений Фельдман",
           "year": 2006,
           "file": "ru,«Знакомьтесь-ка@@@ дети@@@ с царицею Савской...»,Евгений Фельдман,2006.txt"
+        },
+        {
+          "title": "Мудрее не было Балкис",
+          "translator": "Сергей Сапожников",
+          "year": 0,
+          "file": "ru,Мудрее не было Балкис,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 1
+      "translationCount": 2
     },
     {
       "id": "“Therewerethreefriends”",
