@@ -81,6 +81,57 @@
   font-weight: 600;
 }
 
+.tr-list__name--has-profile {
+  cursor: help;
+  border-bottom: 1px dotted color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.tr-profile {
+  position: fixed;
+  z-index: 20;
+  width: min(22.5rem, calc(100vw - 1.5rem));
+  padding: 0.85rem 1rem 0.95rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  text-align: left;
+  background: color-mix(in srgb, var(--paper) 72%, white);
+  border: 1px solid color-mix(in srgb, var(--rule) 40%, transparent);
+  box-shadow:
+    0 0.15rem 0.15rem color-mix(in srgb, var(--rule) 8%, transparent),
+    0 0.65rem 1.4rem color-mix(in srgb, var(--rule) 18%, transparent);
+  pointer-events: auto;
+}
+
+.tr-profile[hidden] {
+  display: none;
+}
+
+.tr-profile__name {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tr-profile__life {
+  margin: 0.15rem 0 0;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+.tr-profile__text {
+  margin: 0.55rem 0 0;
+}
+
+.tr-profile__source {
+  display: inline-block;
+  margin: 0.65rem 0 0;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
 .tr-list__count {
   color: var(--ink-faint);
   font-size: 0.95em;
