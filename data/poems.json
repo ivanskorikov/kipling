@@ -9722,6 +9722,12 @@
           "file": "ru,Сказание об Анге,Аркадий Штейнберг,0.txt"
         },
         {
+          "title": "Легенды о зле",
+          "translator": "Василий Бетаки",
+          "year": 0,
+          "file": "ru,Легенды о зле,Василий Бетаки,0.txt"
+        },
+        {
           "title": "Легенды о грехе",
           "translator": "Евгений Фельдман",
           "year": 1989,
@@ -9734,7 +9740,7 @@
           "file": "ru,Сказание об Анге,Михаил Фроман,0.txt"
         }
       ],
-      "translationCount": 3
+      "translationCount": 4
     },
     {
       "id": "TheLegendofMirth",
@@ -14100,12 +14106,6 @@
       "enFile": "en,With Scindia to Delhi,Rudyard Kipling,1892.txt",
       "translations": [
         {
-          "title": "I.",
-          "translator": "Василий Бетаки",
-          "year": 0,
-          "file": "ru,I.,Василий Бетаки,0.txt"
-        },
-        {
           "title": "Со сциндией в дели",
           "translator": "Евгений Фельдман",
           "year": 0,
@@ -14118,7 +14118,7 @@
           "file": "ru,Со Скиндей – в Дели,Сергей Сапожников,0.txt"
         }
       ],
-      "translationCount": 3
+      "translationCount": 2
     },
     {
       "id": "Zion",
